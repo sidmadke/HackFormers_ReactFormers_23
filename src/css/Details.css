@@ -2,8 +2,6 @@
 
 body{
     height: 100vh;
-    background: url('../assets/Details.jpg');
-    background-size: cover;
     color: white;
     font-family: 'Righteous', cursive;
 }
@@ -13,7 +11,11 @@ body{
     justify-content: center;
     align-items: center;
     /* background-color: rgba(224, 217, 217, 0.251); */
+    background: url('../assets/Details.jpg');
+    background-size: cover;
     height:96vh;
+    margin: 0;
+    padding: 0;
 }
 
 .details_info{
@@ -25,7 +27,7 @@ body{
 
 .details_cont{
     margin: 0;
-    padding: 50px;
+    padding: 0px;
 }
 
 .details input{
