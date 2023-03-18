@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import './Details.css'
+import '../css/Details.css'
 
 function Details() {
     const [userDetails,setUserDetails]=useState({
@@ -36,8 +36,8 @@ function Details() {
   return (
     <div className='details'>
     <div className='details_cont'>
-    <h1>DETAILS</h1>
-        <form about='' onSubmit={handleSubmit}>
+    <h1 className='DetailsTitle'>DETAILS</h1>
+        <form about='' onSubmit={handleSubmit} className="DetailsPage">
             <div className='details_info'> 
                 <label className='label'>AGE</label><br/>
                 <input type='text'autoComplete='off' name='age' id='name' placeholder='e.g.25 years' value={userDetails.age} onChange={handleInput}></input>
@@ -55,7 +55,7 @@ function Details() {
                 <input type='number'autoComplete='off' name='target' id='name' placeholder='e.g.10kg' value={userDetails.target} onChange={handleInput}></input>
             </div>
             <div className='details_info'>
-                <label className='label'>TIME</label><br/>
+                <label className='label'>TIME YOU CAN GIVE FOR WORKOUT</label><br/>
                 <input type='number' autoComplete='off' name='time' id='name' placeholder='time' value={userDetails.time} onChange={handleInput}></input>
             </div>
             <div className='details_info'>
@@ -67,7 +67,7 @@ function Details() {
 
             <div>
                 
-                <button type='submit'>Submit</button>
+                <button type='submit'>Get Plans</button>
             </div>
         </form>
     </div>

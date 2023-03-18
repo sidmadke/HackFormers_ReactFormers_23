@@ -8,7 +8,7 @@ function Login() {
      const [password,setPassword]=useState("");
 
     return (
-        <form action=''>
+        <form action='' className='LoginForm'>
     <div class="login-wrap body2">
         <div class="login-html">
             <h2>Health Transformers</h2>

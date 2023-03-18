@@ -17,7 +17,7 @@ nav{
     height: 550px;
     border-radius: 10px;
 }
-h1{
+.NavTitle{
     color: rgb(209, 209, 209);
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: 'Righteous', cursive;
