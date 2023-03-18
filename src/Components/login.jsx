@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React from 'react'
-import './login.css'
+import '../css/login.css'
 
 function Login() {
      const [email,setEmail]=useState("");
@@ -8,7 +8,7 @@ function Login() {
 
     return (
         <form action=''>
-    <div class="login-wrap">
+    <div class="login-wrap body2">
         <div class="login-html">
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked/><label for="tab-1" class="tab">Sign In</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"/><label for="tab-2" class="tab">Sign Up</label>
@@ -27,7 +27,10 @@ function Login() {
             <label for="check"><span class="icon"></span> Keep me Signed in</label>
             </div>
             <div class="group">
-            <input type="submit" class="button" value="Sign In"/>
+            <Link to="/login">
+
+            <input type="submit" class="button"value="Sign In"></input>
+            </Link>
             </div>
             <div class="hr"></div>
             <div class="foot-lnk">
