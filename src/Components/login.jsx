@@ -29,9 +29,11 @@ function Login() {
             <label for="check"><span class="icon"></span> Keep me Signed in</label>
             </div>
             <div class="group">
-           
+           <Link to="/Details">
 
             <input type="submit" class="button"value="Sign In"></input>
+           </Link>
+
             
             </div>
             <div class="hr"></div>
