@@ -13,14 +13,14 @@ function App() {
   return (
     <>
       <div className="App">
-        <Nav />
-      </div>
       <Routes>
+        <Route path='/login' element={<Nav/>}></Route>
         <Route path='/home' element={<Home />}></Route>
-        <Route path='/login' element={<Login />}></Route>
+        <Route path='/' element={<Login />}></Route>
         <Route path='*' element={<Error />}></Route>
 
       </Routes>
+      </div>
     </>
 
   )
