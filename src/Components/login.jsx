@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from 'react'
 import '../css/login.css'
-import { Link } from 'react-router-dom';
+
 
 function Login() {
      const [email,setEmail]=useState("");
@@ -29,10 +29,10 @@ function Login() {
             <label for="check"><span class="icon"></span> Keep me Signed in</label>
             </div>
             <div class="group">
-            <Link to="/login">
+           
 
             <input type="submit" class="button"value="Sign In"></input>
-            </Link>
+            
             </div>
             <div class="hr"></div>
             <div class="foot-lnk">
