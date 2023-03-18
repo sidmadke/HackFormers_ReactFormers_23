@@ -5,11 +5,26 @@ import '../css/login.css'
 
 
 function Login() {
-     const [email,setEmail]=useState("");
-     const [password,setPassword]=useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+   
+    const handleEmailChange = (event) => {
+      setEmail(event.target.value);
+    };
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+      };
+      
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      // Do something with user details
+      setRecord(prevValue=>[...prevValue,{email,password}])
+        console.log(record)
+    };
 
     return (
-        <form action='' className='LoginForm'>
+        <form action='' className='LoginForm' onSubmit={handleSubmit}>
     <div class="login-wrap body2">
         <div class="login-html">
             <h2>Health Transformers</h2>
@@ -18,12 +33,12 @@ function Login() {
         <div class="login-form">
         <div class="sign-in-htm">
             <div class="group">
-            <label   label for="user" class="label">Email</label>
-            <input id="user" type="text" name='email'  autoComplete='off' class="input" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <label   label for="user" class="label" >Email</label>
+            <input id="user" type="text" name='email'  autoComplete='off' class="input" value={email} onChange={handleEmailChange}/>
             </div>
             <div class="group">
             <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password" value={password}/>
+            <input id="pass" type="password" class="input" autoComplete='off' name='password' data-type="password" value={password} onChange={handlePasswordChange}/>
             </div>
             <div class="group">
             <input id="check" type="checkbox" class="check" checked/>
@@ -32,7 +47,7 @@ function Login() {
             <div class="group">
            <Link to="/Details">
 
-            <input type="submit" class="button"value="Sign In"></input>
+            <input type="submit" class="button" value="Sign In"></input>
            </Link>
 
             
