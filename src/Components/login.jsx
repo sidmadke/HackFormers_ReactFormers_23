@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import React from 'react'
 import './login.css'
 
 function Login() {
-    
+     const [email,setEmail]=useState("");
+     const [password,setPassword]=useState("");
+
     return (
         <form action=''>
     <div class="login-wrap">
@@ -13,11 +16,11 @@ function Login() {
         <div class="sign-in-htm">
             <div class="group">
             <label   label for="user" class="label">Email</label>
-            <input id="user" type="email" class="input"/>
+            <input id="user" type="text" name='email'  autoComplete='off' class="input" value={email} onChange={(e)=>setEmail(e.target.value)}/>
             </div>
             <div class="group">
             <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password"/>
+            <input id="pass" type="password" class="input" data-type="password" value={password}/>
             </div>
             <div class="group">
             <input id="check" type="checkbox" class="check" checked/>
