@@ -20,12 +20,7 @@ exports.signup=(req,res)=>{
             firstName:req.body.firstName,
             lastName:req.body.lastName,
             email:req.body.email,
-            password:req.body.password,
-            // age:req.body.age,
-            // height:req.body.height,
-            // weight:req.body.weight,
-            // target:req.body.target,
-            // time:req.body.time
+            password:req.body.password
         })
 
         _user.save((error,data)=>{
