@@ -15,11 +15,11 @@ function App() {
     <>
       <div className="App">
       <Routes>
+        <Route path='/' element={<Login />}></Route>
         <Route path='/login' element={<Nav/>}></Route>
         <Route path='/home' element={<Home />}></Route>
-        <Route path='/' element={<Login />}></Route>
+        <Route path='/Details' element={<Details />}></Route>
         <Route path='*' element={<Error />}></Route>
-
       </Routes>
       </div>
     </>
