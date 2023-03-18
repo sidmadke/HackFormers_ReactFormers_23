@@ -1,30 +1,41 @@
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import React from 'react'
-import './login.css'
+import '../css/login.css'
+
 
 function Login() {
-    
+     const [email,setEmail]=useState("");
+     const [password,setPassword]=useState("");
+
     return (
-        <form action=''>
-    <div class="login-wrap">
+        <form action='' className='LoginForm'>
+    <div class="login-wrap body2">
         <div class="login-html">
+            <h2>Health Transformers</h2>
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked/><label for="tab-1" class="tab">Sign In</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"/><label for="tab-2" class="tab">Sign Up</label>
         <div class="login-form">
         <div class="sign-in-htm">
             <div class="group">
             <label   label for="user" class="label">Email</label>
-            <input id="user" type="email" class="input"/>
+            <input id="user" type="text" name='email'  autoComplete='off' class="input" value={email} onChange={(e)=>setEmail(e.target.value)}/>
             </div>
             <div class="group">
             <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password"/>
+            <input id="pass" type="password" class="input" data-type="password" value={password}/>
             </div>
             <div class="group">
             <input id="check" type="checkbox" class="check" checked/>
             <label for="check"><span class="icon"></span> Keep me Signed in</label>
             </div>
             <div class="group">
-            <input type="submit" class="button" value="Sign In"/>
+           <Link to="/Details">
+
+            <input type="submit" class="button"value="Sign In"></input>
+           </Link>
+
+            
             </div>
             <div class="hr"></div>
             <div class="foot-lnk">
