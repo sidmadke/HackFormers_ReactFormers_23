@@ -54,7 +54,7 @@
 .or{
     font-size: 20px;
 }
-.input{
+.inSign{
     font-family: 'Titillium Web', sans-serif;
     height: 25px;
     border: 2px solid black;
@@ -76,7 +76,7 @@
 .p{
     font-size: 20px;
 }
-button{
+.signBtn{
     font-family: 'Titillium Web', sans-serif;
     margin: 25px;
     margin-left: 18px;
