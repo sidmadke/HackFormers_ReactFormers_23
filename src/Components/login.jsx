@@ -2,90 +2,82 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import React from 'react'
 import '../css/login.css'
+// import {BsFacebook,BsLinkedin,BsGoogle} from 'react-icons/bs'
 
 
 function Login() {
+    //login
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-   
-    const handleEmailChange = (event) => {
-      setEmail(event.target.value);
-    };
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-      };
-      
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // Do something with user details
-      setRecord(prevValue=>[...prevValue,{email,password}])
-        console.log(record)
-    };
 
-    return (
-        <form action='' className='LoginForm' onSubmit={handleSubmit}>
-    <div class="login-wrap body2">
-        <div class="login-html">
-            <h2>Health Transformers</h2>
-        <input id="tab-1" type="radio" name="tab" class="sign-in" checked/><label for="tab-1" class="tab">Sign In</label>
-        <input id="tab-2" type="radio" name="tab" class="sign-up"/><label for="tab-2" class="tab">Sign Up</label>
-        <div class="login-form">
-        <div class="sign-in-htm">
-            <div class="group">
-            <label   label for="user" class="label" >Email</label>
-            <input id="user" type="text" name='email'  autoComplete='off' class="input" value={email} onChange={handleEmailChange}/>
-            </div>
-            <div class="group">
-            <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" autoComplete='off' name='password' data-type="password" value={password} onChange={handlePasswordChange}/>
-            </div>
-            <div class="group">
-            <input id="check" type="checkbox" class="check" checked/>
-            <label for="check"><span class="icon"></span> Keep me Signed in</label>
-            </div>
-            <div class="group">
-           <Link to="/Details">
+    console.log(email, password);
+    async function userLogin(e){
+        e.preventDefault();
+        try {
+            const result = await fetch(`${api}/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': "application/json",
+                },
+                body: JSON.stringify({
+                    email, password
+                })
 
-            <input type="submit" class="button" value="Sign In"></input>
-           </Link>
-
+            }).then((res) => res.json())
+            // console.log(result.token)
+            localStorage.setItem('token', result.token)
             
+            // console.log(result.user)
+            if(result.status === 200) { 
+                alert("Login Successfully 💫")
+                navigate('/')}
+            else if(password.length<6){
+                alert("Password must be minimum six characters 💀")
+            }
+            else if(result.status === 400){
+                alert("Invalid Email or Password 🥺")
+            }
+            else {
+                alert("Invalid Email or Password 🥺")
+            }
+
+        }
+        catch (err) {
+            console.log(err)
+        }
+        window.location.reload();
+    }
+    return (
+        <div className='mai'>
+        <form className='log1'>
+            <div className='lhead'>Log-in</div>
+            <div className='block'>
+                <div className='label'>Email</div>
+                <input className='input' type='email' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
             </div>
-            <div class="hr"></div>
-            <div class="foot-lnk">
-            <a href="#forgot">Forgot Password?</a>
+            <div className='block'>
+                <div className='label'>Password</div>
+                <input className='input' type='password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
             </div>
+            <div className='cb'>
+                <input className='check' type='checkbox'></input>
+                <div className='p'>Remember Me?</div>
+            </div>
+            <button onClick={userLogin}>LOGIN</button>
+            <div className='f'>Forgot Password?</div>
+            <div className='or'>OR</div>
+            <div className='or'>Continue With</div><br/>
+            {/* <div className='sl'>
+                <BsGoogle size={30} className='g'/>
+                <BsFacebook size={30} className='f'/>
+                <BsLinkedin size={30} className='l'/>
+            </div> */}
+            <div className='need'>
+                Need an account? <Link className='link' to='/Sign'>Sign-Up</Link>
+                <div></div>
+            </div>
+        </form>
         </div>
-        <div class="sign-up-htm">
-            <div class="group">
-            <label for="user" class="label">Username</label>
-            <input id="user" type="text" class="input"/>
-            </div>
-            <div class="group">
-            <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password"/>
-            </div>
-            <div class="group">
-            <label for="pass" class="label">Repeat Password</label>
-            <input id="pass" type="password" class="input" data-type="password"/>
-            </div>
-            <div class="group">
-            <label for="pass" class="label">Email Address</label>
-            <input id="pass" type="text" class="input"/>
-            </div>
-            <div class="group">
-            <input type="submit" class="button" value="Sign Up"/>
-            </div>
-                <div class="hr"></div>
-            <div class="foot-lnk">
-            <label for="tab-1">Already Member?</label>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>
-    </form>
     )
 }
 

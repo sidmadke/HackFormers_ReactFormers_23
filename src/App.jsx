@@ -10,6 +10,7 @@ import Home from './Components/Home'
 import Error from './Components/Error'
 import Details from './Components/Details'
 import Plan from './Components/Plan'
+import Signup from './Components/Signup'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Nav />}></Route>
         <Route path='/login' element={<Login/>}></Route>
+        <Route path='/signup' element={<Signup/>}></Route>
         <Route path='/home' element={<Home />}></Route>
         <Route path='/Details' element={<Details />}></Route>
         <Route path='*' element={<Error />}></Route>
