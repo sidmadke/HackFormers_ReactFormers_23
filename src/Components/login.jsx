@@ -14,7 +14,7 @@ function Login() {
     async function userLogin(e){
         e.preventDefault();
         try {
-            const result = await fetch(`${api}/login`, {
+            const result = await fetch('http://localhost:2000/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': "application/json",
@@ -27,15 +27,10 @@ function Login() {
             // console.log(result.token)
             localStorage.setItem('token', result.token)
             
-            // console.log(result.user)
+            console.log(result.status)
             if(result.status === 200) { 
                 alert("Login Successfully 💫")
-                navigate('/')}
-            else if(password.length<6){
-                alert("Password must be minimum six characters 💀")
-            }
-            else if(result.status === 400){
-                alert("Invalid Email or Password 🥺")
+                // navigate('/')
             }
             else {
                 alert("Invalid Email or Password 🥺")

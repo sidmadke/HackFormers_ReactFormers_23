@@ -3,8 +3,8 @@
 // import '../css/Details.css'
 
 // function Details() {
-    
-    
+
+
 
 
 //   return (
@@ -40,7 +40,7 @@
 //             </div>
 
 //             <div>
-                
+
 //                 <button type='submit'>Get Plans</button>
 //             </div>
 //         </form>
@@ -53,36 +53,45 @@
 
 import React, { useState } from 'react';
 import '../css/Details.css';
+import axios from 'axios';
 
 function Details() {
-    const [age, setAge] = useState('');
-    const [height, setHeight] = useState('');
-    const [weight, setWeight] = useState('');
-    const [target, setTarget] = useState('');
-    const [time, setTime] = useState('');
-    const [record,setRecord]=useState([])
-    const handleAgeChange = (event) => {
-      setAge(event.target.value);
-    };
-    const handleHeightChange = (event) => {
-        setHeight(event.target.value);
-      };
-      const handleWeightChange = (event) => {
-        setWeight(event.target.value);
-      };
-      const handleTargetChange = (event) => {
-        setTarget(event.target.value);
-      };
-      const handleTimeChange = (event) => {
-        setTime(event.target.value);
-      };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // Do something with user details
-      setRecord(prevValue=>[...prevValue,{age,height,weight,target}])
-        console.log(record)
-    };
+  const token = JSON.parse(atob(localStorage.getItem('token').split('.')[1]));
+  console.log(token._id);
+
+  const [selectedOption, setSelectedOption] = useState('option1');
+  const [age, setAge] = useState('');
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+  const [target, setTarget] = useState('');
+  const [time, setTime] = useState('');
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+  const handleAgeChange = (event) => {
+    setAge(event.target.value);
+  };
+  const handleHeightChange = (event) => {
+    setHeight(event.target.value);
+  };
+  const handleWeightChange = (event) => {
+    setWeight(event.target.value);
+  };
+  const handleTargetChange = (event) => {
+    setTarget(event.target.value);
+  };
+  const handleTimeChange = (event) => {
+    setTime(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({ user: token._id, age, height, weight,gainloose:'gain', target ,time})
+    axios.post('http://localhost:2000/api/adddetails', { user: token._id, age, height, weight,gainloose:'gain', target,time}).then(data => {
+      console.log(data)
+    })
+  };
 
   return (
     <div className='details'>
@@ -134,32 +143,57 @@ function Details() {
               name='target'
               id='name'
               placeholder="e.g.10kg"
-			  value={target} onChange={handleTargetChange}></input>  
+              value={target} onChange={handleTargetChange}></input>
           </div>
-          
+
           <div className='details_info'>
-            <label className='label'>TARGET</label>
+            <label className='label'>Time</label>
             <br />
             <input
-              type='number'
+              type='text'
               autoComplete='off'
               name='target'
               id='name'
               placeholder="e.g.10kg"
-			  value={time} onChange={handleTimeChange}></input>  
+              value={time} onChange={handleTimeChange}></input>
           </div>
-          
-          <div className='details_info'>
-//                 <div className='radio'>
-//                 <input type='radio' autoComplete='off' name='time' id='name' placeholder='time'></input><label className='radio'>LOOSE WEIGHT</label></div>
-//                 <div className='radio'><input type='radio' autoComplete='off' name='time' id='name' placeholder='time' ></input><label className='radio'>GAIN WEIGHT</label><br/>
-                </div>
-            </div>
 
+          <div className='details_info'>
+            {/* <div className='radio'>
+              <input type='radio' autoComplete='off' name='time' id='name' placeholder='time'></input>
+              <label className='radio'>LOOSE WEIGHT</label>
+              </div>
+            <div className='radio'>
+              <input type='radio' autoComplete='off' name='time' id='name' placeholder='time' >
+                </input><label className='radio'>GAIN WEIGHT</label><br />
+            </div> */}
             <div>
-                
-                <button type='submit'>Get Plans</button>
-             </div>
+            <label>
+              <input
+                type="radio"
+                value="option1"
+                checked={selectedOption === 'option1'}
+                onChange={handleOptionChange}
+              />
+              Gain Weight
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                value="option2"
+                checked={selectedOption === 'option2'}
+                onChange={handleOptionChange}
+              />
+              Loose Weight
+            </label>
+          </div>
+          </div>
+
+          <div>
+
+            <button type='submit'>Get Plans</button>
+          </div>
         </form>
       </div>
     </div>

@@ -33,11 +33,11 @@ exports.adddetails=(req,res)=>{
             .exec((error,data)=>{
                 if(error){
                     console.log(error)
-                    return res.status(200).json({error})
+                    return res.status(400).json({error})
                 }
                 if(data){
                     console.log(data);
-                    return res.status(400).json({data})
+                    return res.status(200).json({data})
                 }
             })
         }
