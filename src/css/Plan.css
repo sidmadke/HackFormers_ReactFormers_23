@@ -1,0 +1,29 @@
+.Plans{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 1500px;
+    padding-left: 200px;
+}
+.workout-plan{
+    background-color: rgba(128, 128, 128, 0.344);
+    width: 40%;
+    height: 673px;
+    border-radius: 10px;
+    margin: 18px 10px;
+}
+.diet-plan{
+    background-color: rgb(155, 165, 42);
+    width: 40%;
+    height: 673px;
+    border-radius: 10px;
+    margin: 18px 10px;
+}
+.PlanBg{
+    background-color: black;
+}
+.PlanTitle{
+    color: black;
+    filter:drop-shadow(1px 1px 1px white);
+    padding-top: 30px;
+}
