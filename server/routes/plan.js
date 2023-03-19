@@ -3,6 +3,6 @@ const router=express.Router();
 const { addPlan, getPlan } = require('../controllers/plan');
 
 router.post('/addplan',addPlan);
-router.get('/getplan',getPlan)
+router.post('/getplan',getPlan);
 
 module.exports=router;

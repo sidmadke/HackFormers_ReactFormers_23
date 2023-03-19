@@ -50,10 +50,10 @@ exports.getPlan=(req,res)=>{
     Plan.findOne({user:req.body.user})
     .exec((error,plan)=>{
         if(error){
-            return res.status(200).json({error})
+            return res.status(400).json({error})
         }
         if(plan){
-            return res.status(400).json({plan})
+            return res.status(200).json({plan})
         }
     })
 }
