@@ -9,8 +9,8 @@ import Login from './Components/login'
 import Home from './Components/Home'
 import Error from './Components/Error'
 import Details from './Components/Details'
-import Plans from './Components/Plans'
 import Signup from './Components/Signup'
+import Plans from './Components/Plans'
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
         <Route path='/Details' element={<Details />}></Route>
         <Route path='/Plans' element={<Plans />}></Route>
         <Route path='*' element={<Error />}></Route>
-        {/* <Route path='/plans' element={<Plan/>}></Route> */}
       </Routes>
       </div>
     </>

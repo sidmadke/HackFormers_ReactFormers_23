@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import React from 'react'
 import '../css/login.css'
@@ -9,6 +9,7 @@ function Login() {
     //login
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate=useNavigate();
 
     console.log(email, password);
     async function userLogin(e){
@@ -30,7 +31,7 @@ function Login() {
             console.log(result.status)
             if(result.status === 200) { 
                 alert("Login Successfully 💫")
-                // navigate('/')
+                navigate('/Details')
             }
             else {
                 alert("Invalid Email or Password 🥺")
@@ -47,18 +48,20 @@ function Login() {
         <form className='log1'>
             <div className='lhead'>Log-in</div>
             <div className='block'>
-                <div className='label'>Email</div>
-                <input className='input' type='email' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+                <div className='label2'>Email</div>
+                <input className='input inSign' type='email' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
             </div>
             <div className='block'>
-                <div className='label'>Password</div>
-                <input className='input' type='password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+                <div className='label2'>Password</div>
+                <input className='input inSign' type='password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
             </div>
             <div className='cb'>
-                <input className='check' type='checkbox'></input>
+                <input className='check2' type='2box'></input>
                 <div className='p'>Remember Me?</div>
             </div>
-            <button onClick={userLogin}>LOGIN</button>
+            <Link to='/'>
+                <button onClick={userLogin} className="buttonLog">LOGIN</button>
+            </Link>
             <div className='f'>Forgot Password?</div>
             <div className='or'>OR</div>
             <div className='or'>Continue With</div><br/>
@@ -68,7 +71,7 @@ function Login() {
                 <BsLinkedin size={30} className='l'/>
             </div> */}
             <div className='need'>
-                Need an account? <Link className='link' to='/Sign'>Sign-Up</Link>
+                Need an account? <Link className='link' to='/Signup'>Sign-Up</Link>
                 <div></div>
             </div>
         </form>

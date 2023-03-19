@@ -36,29 +36,30 @@ body{
 }
 
 .details input{
-    width:800px;
+    width:500px;
     height:15px;
-    padding:14px;
+    padding:7px;
     border-radius: 5px;
 }
 
 .details button{
-    width:150px;
+    width:100px;
     height:40px;
     margin-top: 0;
     margin-left: 50px;
     border-radius: 5px;
-    background-color: rgb(59, 59, 59);
-    padding:5px 0px;
-    font-size: 20px;
-    filter: drop-shadow(4px 4px 4px cyan);
-    border: none;
+    cursor: pointer;
 }
 
-.label{
+.details button:hover{
+    width:103px;
+    height:42px;
+}
+
+label{
     text-align: left;
     width:100%;
-    font-size: 0.9rem;
+    font-size: 1.0rem;
 }
 
 .radio{
@@ -78,4 +79,8 @@ body{
 }
 .DetailsTitle{
     filter: drop-shadow(4px 4px 4px Black);
+}
+.radioBTN{
+    position: absolute;
+    right: 270px;
 }

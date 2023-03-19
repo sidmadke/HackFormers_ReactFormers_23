@@ -54,6 +54,7 @@
 import React, { useState } from 'react';
 import '../css/Details.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Details() {
   const token = JSON.parse(atob(localStorage.getItem('token').split('.')[1]));
@@ -118,7 +119,7 @@ function Details() {
               autoComplete='off'
               name='weight'
               id='name'
-              placeholder='e.g.10kg'
+              placeholder='e.g.45kg'
               value={weight} onChange={handleWeightChange}
             ></input>
           </div>
@@ -142,7 +143,7 @@ function Details() {
               autoComplete='off'
               name='target'
               id='name'
-              placeholder="e.g.10kg"
+              placeholder="e.g.10 kg"
               value={target} onChange={handleTargetChange}></input>
           </div>
 
@@ -152,9 +153,9 @@ function Details() {
             <input
               type='text'
               autoComplete='off'
-              name='target'
+              name='time'
               id='name'
-              placeholder="e.g.10kg"
+              placeholder="e.g.1 hour"
               value={time} onChange={handleTimeChange}></input>
           </div>
 
@@ -174,8 +175,9 @@ function Details() {
                 value="option1"
                 checked={selectedOption === 'option1'}
                 onChange={handleOptionChange}
+                className="radioBTN"
               />
-              Gain Weight
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gain Weight
             </label>
             <br />
             <label>
@@ -184,15 +186,16 @@ function Details() {
                 value="option2"
                 checked={selectedOption === 'option2'}
                 onChange={handleOptionChange}
+                className="radioBTN"
               />
-              Loose Weight
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loose Weight
             </label>
           </div>
           </div>
 
           <div>
 
-            <button type='submit'>Get Plans</button>
+            <Link to='/plans'><button type='submit'>Get Plans</button></Link>
           </div>
         </form>
       </div>

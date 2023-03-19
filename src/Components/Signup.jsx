@@ -40,26 +40,26 @@ function Signup() {
         <form className='log'>
             <div className='lhead'>Sign-up</div>
             <div className='block'>
-                <div className='label'>Firstname</div>
-                <input className='input' type='text' value={firstName} onChange={(e)=>setFname(e.target.value)} ></input>
+                <div className='label2'>Firstname</div>
+                <input className='input inSign' type='text' value={firstName} onChange={(e)=>setFname(e.target.value)} ></input>
             </div>
             <div className='block'>
-                <div className='label'>Lastname</div>
-                <input className='input' type='text' value={lastName} onChange={(e)=>setLname(e.target.value)} ></input>
+                <div className='label2'>Lastname</div>
+                <input className='input inSign' type='text' value={lastName} onChange={(e)=>setLname(e.target.value)} ></input>
             </div>
             <div className='block'>
-                <div className='label'>E-Mail</div>
-                <input className='input' type='text' value={email} onChange={(e)=>setEmail(e.target.value)} ></input>
+                <div className='label2'>E-Mail</div>
+                <input className='input inSign' type='text' value={email} onChange={(e)=>setEmail(e.target.value)} ></input>
             </div>
             {/* <div className='block'>
-                <div className='label'>Username</div>
+                <div className='label2'>Username</div>
                 <input className='input' type='text' value={name} onChange={(e)=>setName(e.target.value)}  ></input>
             </div> */}
             <div className='block'>
-                <div className='label'>Password</div>
-                <input className='input' type='password'  value={password} onChange={(e)=>setPassword(e.target.value)} ></input>
+                <div className='label2'>Password</div>
+                <input className='input inSign' type='password'  value={password} onChange={(e)=>setPassword(e.target.value)} ></input>
             </div>
-            <button type='submit'  onClick={registerUser}>Sign-UP</button>
+            <button type='submit' className='signBtn' onClick={registerUser}>Sign-UP</button>
             <div className='or'>OR</div>
             <div className='or'>Continue With</div><br/>
             {/* <div className='sl'>

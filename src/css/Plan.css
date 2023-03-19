@@ -13,7 +13,7 @@
     margin: 18px 10px;
 }
 .diet-plan{
-    background-color: rgb(155, 165, 42);
+    background-color: rgb(248, 250, 229);
     width: 40%;
     height: 673px;
     border-radius: 10px;
@@ -26,4 +26,9 @@
     color: black;
     filter:drop-shadow(1px 1px 1px white);
     padding-top: 30px;
+    padding-left:20px;
+}
+
+.NavTitle{
+    text-align: center;
 }
