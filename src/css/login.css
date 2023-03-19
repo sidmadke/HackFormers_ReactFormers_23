@@ -1,21 +1,20 @@
 .log1{
-    /* font-family: "Berkshire Swash", cursive; */
-    font-family: 'Titillium Web', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 15px;
-    height: 650px;
+    height: 658px;
     width: 400px;
-    border: 2px solid BLACK;
-    border-radius: 25px;
+    border-radius: 10px;
     text-align: center;
-    background-color: rgba(31, 186, 191, 0.45);
-    color: black;
+    background-color:rgba(71, 71, 71, 0.374);
+    color: rgb(255, 255, 255);
     font-weight: 600;
     letter-spacing: 1px;
+    filter: drop-shadow(4px 4px 4px rgba(255, 255, 255, 0.507));
 }
 .mai{
     margin-top: 0px;
@@ -46,21 +45,8 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.label{
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px 0px 10px 0px;
-}
 .or{
     font-size: 20px;
-}
-.input{
-    font-family: 'Titillium Web', sans-serif;
-    height: 25px;
-    width: 200px;
-    border: 2px solid black;
-    border-radius: 2px;
-    padding: 2px;
 }
 .cb{
     text-align: left;
@@ -70,14 +56,14 @@
     display: flex;
     gap: 10px;
 }
-.check{
+.check2{
     height: 20px;
     width: 20px;
 }
 .p{
     font-size: 20px;
 }
-button{
+.buttonLog{
     font-family: 'Titillium Web', sans-serif;
     margin: 25px;
     margin-left: 18px;

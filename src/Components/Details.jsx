@@ -174,8 +174,9 @@ function Details() {
                 value="option1"
                 checked={selectedOption === 'option1'}
                 onChange={handleOptionChange}
+                className="radioBTN"
               />
-              Gain Weight
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gain Weight
             </label>
             <br />
             <label>
@@ -184,8 +185,9 @@ function Details() {
                 value="option2"
                 checked={selectedOption === 'option2'}
                 onChange={handleOptionChange}
+                className="radioBTN"
               />
-              Loose Weight
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loose Weight
             </label>
           </div>
           </div>
