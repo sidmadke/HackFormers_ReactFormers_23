@@ -38,11 +38,17 @@ body{
 }
 
 .details button{
-    width:80px;
+    width:100px;
     height:40px;
     margin-top: 0;
     margin-left: 15px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.details button:hover{
+    width:103px;
+    height:42px;
 }
 
 label{

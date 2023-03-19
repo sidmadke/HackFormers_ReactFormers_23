@@ -31,7 +31,7 @@ function Login() {
             console.log(result.status)
             if(result.status === 200) { 
                 alert("Login Successfully 💫")
-                navigate('/')
+                navigate('/Details')
             }
             else {
                 alert("Invalid Email or Password 🥺")
