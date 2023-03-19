@@ -1,4 +1,4 @@
-.log1{
+.log{
     /* font-family: "Berkshire Swash", cursive; */
     font-family: 'Titillium Web', sans-serif;
     margin: 0 auto;
@@ -7,7 +7,7 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 15px;
-    height: 650px;
+    height: 850px;
     width: 400px;
     border: 2px solid BLACK;
     border-radius: 25px;
@@ -57,10 +57,9 @@
 .input{
     font-family: 'Titillium Web', sans-serif;
     height: 25px;
-    width: 200px;
     border: 2px solid black;
-    border-radius: 2px;
-    padding: 2px;
+    border-radius: 8px;
+    padding: 0;
 }
 .cb{
     text-align: left;
